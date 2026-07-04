@@ -2,7 +2,6 @@
 
 This guide demonstrates how to deploy a **Nessus Agent** on a Windows virtual machine, link it to a **Tenable Agent Group**, configure a **Triggered Agent Scan**, and verify that the scan executes successfully.
 
----
 
 # Prerequisites
 
@@ -11,17 +10,14 @@ This guide demonstrates how to deploy a **Nessus Agent** on a Windows virtual ma
 - PowerShell with Administrator privileges
 - Internet connectivity
 
----
 
 # Step 1: Create the Windows Virtual Machine
 
 Create a **Windows 11** virtual machine (`VM-11`) that will be used for installing the Nessus Agent.
 
 > **Figure 1:** Windows 11 Virtual Machine
+![Figure 1](images/fig1.png)
 
-```text
-[Insert Figure 1 Here]
-```
 
 ---
 
@@ -42,10 +38,7 @@ Settings
 5. Save the group.
 
 > **Figure 2:** Creating a Nessus Agent Group
-
-```text
-[Insert Figure 2 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
@@ -72,9 +65,7 @@ Click **Save**.
 
 > **Figure 3:** Creating the Triggered Agent Scan
 
-```text
-[Insert Figure 3 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
@@ -104,9 +95,7 @@ Invoke-WebRequest -Uri "https://sensor.cloud.tenable.com/install/agent/installer
 
 > **Figure 4:** Copying the Agent Installation Command
 
-```text
-[Insert Figure 4 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
@@ -136,9 +125,7 @@ Invoke-WebRequest -Uri "https://sensor.cloud.tenable.com/install/agent/installer
 
 > **Figure 5:** Modified Installation Script
 
-```text
-[Insert Figure 5 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
@@ -157,9 +144,7 @@ The installation process will automatically:
 
 > **Figure 6:** Installing the Nessus Agent
 
-```text
-[Insert Figure 6 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
@@ -181,9 +166,7 @@ This creates the trigger file that initiates the configured **Triggered Scan**.
 
 > **Figure 7:** Creating the Trigger File
 
-```text
-[Insert Figure 7 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
@@ -201,9 +184,7 @@ automatically disappears, it indicates that the Nessus Agent has detected the tr
 
 > **Figure 8:** Trigger File Removed
 
-```text
-[Insert Figure 8 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
@@ -230,9 +211,7 @@ Verify:
 
 > **Figure 9:** Linked Nessus Agent
 
-```text
-[Insert Figure 9 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
@@ -259,9 +238,7 @@ start.txt
 
 > **Figure 10:** Triggered Scan Results
 
-```text
-[Insert Figure 10 Here]
-```
+![Figure 1](images/fig1.png)
 
 ---
 
