@@ -15,10 +15,6 @@ This guide demonstrates how to deploy a **Nessus Agent** on a Windows virtual ma
 
 Create a **Windows 11** virtual machine (`VM-11`) that will be used for installing the Nessus Agent.
 
-> **Figure 1:** Windows 11 Virtual Machine
-![Figure 1](images/fig1.png)
-
-
 ---
 
 # Step 2: Create a Nessus Agent Group
@@ -37,7 +33,7 @@ Settings
 4. Enter a name for the agent group (e.g., `Agent-group-ali`).
 5. Save the group.
 
-> **Figure 2:** Creating a Nessus Agent Group
+> **Figure 1:** Creating a Nessus Agent Group
 ![Figure 1](images/fig1.png)
 
 ---
@@ -63,9 +59,9 @@ Configure the scan with the following settings:
 
 Click **Save**.
 
-> **Figure 3:** Creating the Triggered Agent Scan
+> **Figure 2:** Creating the Triggered Agent Scan
 
-![Figure 1](images/fig1.png)
+![Figure 2](images/fig2.png)
 
 ---
 
@@ -95,7 +91,7 @@ Invoke-WebRequest -Uri "https://sensor.cloud.tenable.com/install/agent/installer
 
 > **Figure 4:** Copying the Agent Installation Command
 
-![Figure 1](images/fig1.png)
+![Figure 3](images/fig3.png)
 
 ---
 
@@ -122,11 +118,6 @@ Example:
 ```powershell
 Invoke-WebRequest -Uri "https://sensor.cloud.tenable.com/install/agent/installer/ms-install-script.ps1" -OutFile "./ms-install-script.ps1"; & "./ms-install-script.ps1" -key "58aab372289ac80911e4c5ad40a07b23b5524319f9ff5c010aa50ec625ccf389" -type "agent" -groups 'Agent-group-ali'; Remove-Item -Path "./ms-install-script.ps1"
 ```
-
-> **Figure 5:** Modified Installation Script
-
-![Figure 1](images/fig1.png)
-
 ---
 
 # Step 6: Install the Nessus Agent
@@ -142,10 +133,6 @@ The installation process will automatically:
 - Link it to your Tenable account
 - Associate it with the specified Agent Group
 
-> **Figure 6:** Installing the Nessus Agent
-
-![Figure 1](images/fig1.png)
-
 ---
 
 # Step 7: Trigger the Local Agent Scan
@@ -155,6 +142,8 @@ Navigate to the trigger directory:
 ```powershell
 cd "C:\ProgramData\Tenable\Nessus Agent\nessus\triggers"
 ```
+![Figure 4](images/fig4.png)
+> **Figure 7:** Navigating to the Trigger directory
 
 Create the trigger file:
 
@@ -164,10 +153,11 @@ New-Item -Name start.txt
 
 This creates the trigger file that initiates the configured **Triggered Scan**.
 
+![Figure 5](images/fig5.png)
 > **Figure 7:** Creating the Trigger File
 
-![Figure 1](images/fig1.png)
-
+![Figure 6](images/fig6.png)
+> **Figure 8:** text File shown in the explorer.
 ---
 
 # Step 8: Verify the Scan Has Started
@@ -182,9 +172,10 @@ start.txt
 
 automatically disappears, it indicates that the Nessus Agent has detected the trigger and the local vulnerability scan has begun.
 
-> **Figure 8:** Trigger File Removed
+![Figure 7](images/fig9.png)
+> **Figure 8:** the scan has begun
 
-![Figure 1](images/fig1.png)
+
 
 ---
 
@@ -211,7 +202,7 @@ Verify:
 
 > **Figure 9:** Linked Nessus Agent
 
-![Figure 1](images/fig1.png)
+![Figure 8](images/fig8.png)
 
 ---
 
@@ -235,10 +226,6 @@ start.txt
 ```
 
 - The scan completed successfully.
-
-> **Figure 10:** Triggered Scan Results
-
-![Figure 1](images/fig1.png)
 
 ---
 
